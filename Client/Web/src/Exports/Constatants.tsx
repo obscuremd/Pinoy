@@ -2,7 +2,7 @@ import { Car, Cart, GraphUp, ReportsSolid, User } from "iconoir-react";
 
 
 export const menuItems = [
-    { icon: <GraphUp/>, name:'Overview', link: '/overview' },
+    { icon: <GraphUp/>, name:'Overview', link: '/' },
     { icon: <Car/>, name:'Drivers', link: '/drivers' },
     { icon: <ReportsSolid/>, name:'Analytics', link: '/Overview' },
     { icon: <Cart/>, name:'Orders', link: '/orders' },

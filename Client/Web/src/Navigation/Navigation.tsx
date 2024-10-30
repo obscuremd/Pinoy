@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import { Suspense } from 'react'
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { menuItems } from '../Exports/Constatants'
 import { Button, Drivers, Menu, Order, Overview, UserReviews } from '../Exports/Exports'
@@ -32,7 +32,7 @@ const Content = () => {
             <Button color='primary' hover='false' text={Path[0].name} icon_left={Path[0].icon} outline size='lg' rounded='medium' position='start' stretch gap='gap-[32px]' />
             <div className='h-screen overflow-y-scroll'>
               <Routes>
-                  <Route path='/overview' element={<Overview />} />
+                  <Route path='/' element={<Overview />} />
                   <Route path='/drivers' element={<Drivers />} />
                   <Route path='/orders' element={<Order />} />
                   <Route path='/user-reviews' element={<UserReviews />} />
