@@ -8,9 +8,9 @@ const OverviewScreen = () => {
  
 
   return (
-    <div className='flex gap-8 w-full'>
+    <div className='flex flex-col md:flex-row gap-8 w-full'>
       {/* right part */}
-      <div className='w-[50%] flex flex-col gap-8'>
+      <div className='w-full md:w-[50%] flex flex-col gap-8'>
         
         <div className='flex flex-col gap-1'>
           <Text text='Search for Driver' fontSize='caption'/>
@@ -42,7 +42,7 @@ const OverviewScreen = () => {
       </div>
       
       {/* left part */}
-      <div className='w-[50%] gap flex flex-col gap-8'>
+      <div className='w-full md:w-[50%] gap flex flex-col gap-8'>
         
         <div className='flex flex-col gap-2'>
           <Button color='primary' hover='false' text='Drivers' size='lg' rounded='medium' position='center' stretch  />

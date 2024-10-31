@@ -123,4 +123,4 @@ export const timelineData = [
     },
 
 ]
-
+export const isMobile= window.innerWidth < 768
