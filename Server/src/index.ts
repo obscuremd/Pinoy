@@ -3,6 +3,9 @@ import dotenv from 'dotenv'
 import cors from 'cors'
 import mongoose from 'mongoose'
 import UserRoute from './Routes/UserRoute'
+import TripRoute from './Routes/TripRoute'
+import AdminRoute from './Routes/AdminRoute'
+import ReviewsRoute from './Routes/ReviewsRoute'
 
 dotenv.config()
 const app = express();
@@ -27,6 +30,9 @@ app.use(express.json())
 // Routes
 app.get('/', (req, res) => { res.send('Welcome hello worldss')})
 app.use('/user', UserRoute)
+app.use('/trip', TripRoute)
+app.use('/admin', AdminRoute)
+app.use('/reviews', ReviewsRoute)
 
 
 app.listen(PORT, ()=> {

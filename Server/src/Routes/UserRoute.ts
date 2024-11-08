@@ -3,7 +3,7 @@ import User from "../Models/UserModel";
 const router = Router()
 
 // create user
-router.post('/', async (req, res) => {
+router.post('/register', async (req, res) => {
     const { username, email, phone_number, admin, admin_data_id, driver, drivers_license, car_picture, car_number, activity, status, trips, location} = req.body
     try {
         const newUser = new User({ username, email, phone_number, admin, admin_data_id, driver, drivers_license, car_picture, car_number, activity, status, trips: trips, location: location });
@@ -43,11 +43,11 @@ router.put('/:id', async(req, res) => {
             const user = await User.findById(req.params.id)
 
                 if(!user){
-                    res.status(404).json('can only update user  documents')
+                    res.status(404).json('no such user found')
+                }else{
+                    const updatedUser = await user?.updateOne({$set:(req.body)})
+                    res.status(200).json(updatedUser)
                 }
-                
-                const updatedUser = await user?.updateOne({$set:(req.body)})
-                res.status(200).json(updatedUser)
         
     } catch (error) {
         res.status(500).json(error)
@@ -57,18 +57,16 @@ router.put('/:id', async(req, res) => {
 // delete user
 router.delete('/:id', async (req, res) => {
     try {
-        // Find the user by ID
-        const user = await User.findById(req.params.id);
 
-        // Check if the user exists
-        if (!user) {
-            return res.status(404).json({ message: "User not found" });
+        const user = await User.findById(req.params.id)
+
+        if(!user){
+            res.status(404).json('no such user found')
+        }else{
+            await User.findByIdAndDelete(req.params.id);
+            res.status(200).json({ message: `user has been deleted` });
         }
 
-        // Delete the user
-        await User.findByIdAndDelete(req.params.id);
-
-        res.status(200).json({ message: `${user.username} has been deleted` });
     } catch (error) {
         res.status(500).json({ message: error });
     }
