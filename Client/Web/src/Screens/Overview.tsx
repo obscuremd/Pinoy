@@ -5,8 +5,6 @@ import { NavArrowLeft, NavArrowRight } from 'iconoir-react'
 
 const OverviewScreen = () => {
 
- 
-
   return (
     <div className='flex flex-col md:flex-row gap-8 w-full'>
       {/* right part */}

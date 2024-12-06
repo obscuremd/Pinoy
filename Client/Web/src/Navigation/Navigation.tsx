@@ -25,6 +25,7 @@ const Navigation = () => {
                     <Menu menuItems={menuItems} logo={false} />
                   </div>
                   }
+                  
                 <Content setMobileMenu={setMobileMenu}/>
           </BrowserRouter>
         </div>

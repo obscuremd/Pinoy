@@ -1,5 +1,6 @@
 import { Car, Cart, GraphUp, ReportsSolid, User } from "iconoir-react";
 
+export const characters = /[`!@#$%^&*()_+\-={};':"\\|,.<>/?~]/;
 
 export const menuItems = [
     { icon: <GraphUp/>, name:'Overview', link: '/' },
@@ -9,15 +10,15 @@ export const menuItems = [
     { icon: <User/>, name:'User Reports', link: '/user-reviews' },
 ]
 
-export const hero = 'https://s3-alpha-sig.figma.com/img/8de7/21fa/834f7fd43c8493b9fd4aed48389dfa7b?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jyzKUCMncdTjcmLTlZG7By4GfWNbgvrtC4R~jFZKoXvBEOcwtE1Rli5ewvQ0LnZfwkhnUAkAcZmUcL7-KPRRDIDjmQYZJdp~xaD6kcf1ob4RfZ0vYo7FB539nt1hG3oYRgDTYQGsez4YYmBhWBdbcLJUolfeWeQ9X4FBIblQ1f9Abs6Su470QEh9D3RbaVpd2edVYe2jwQuiPBFkeTi7YXnuuhXbALOlRl6SixOzWdawOYGkpaxKm-9IjH95fulJw5clUPg76l0uTBe5ZcyBQECOLeOyydmYaCrfO6HhLMhOfS~D~t8Y5ixNBq2Va1oHswP9kVFZEZWaQnPKtb~AGQ__'
+export const hero = 'https://images.unsplash.com/photo-1498887960847-2a5e46312788?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2FyfGVufDB8fDB8fHww'
 
 export const cardData = [
     { 
-        image: 'https://s3-alpha-sig.figma.com/img/7fdf/dd57/0090702d927088541ef4fb47c7a3b641?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ya~tn7TyuimGn2jcAn1iLYYA9eSK-rJowNvG3u7T0KAihCme0tQNCPJwJUHzPj0nkdhW5b9Ac63k5y6FX5118KxpzQ79PxojNVXpbnsZYKlkJif5DHvwWnodA7HolEp-ic5NDf~OJ45ioyd6GelvWmgaMEffk8LqgZRBtwRZd~4dJIn0i0qyYPAlQaJaDurSHHcsjgx-GtpS4g9McMY4vEIwjdaNQR5YtywokS0x5-7Pu7tWXGpMm8IIOUK0uSEvvt683~4OGkTu7762C79kYtV9A8c4IVtrGV3lPhZ8kQnpC68gT9oON3LqGIkpSIablnTLp4uXhAYR3CK~h~yh~Q__',
+        image: 'https://plus.unsplash.com/premium_photo-1683134240084-ba074973f75e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2FyfGVufDB8fDB8fHww',
         primary_text:'',
         secondary_text:'(+234) 090-xxx-xxxx',
 
-        avatar_image: 'https://s3-alpha-sig.figma.com/img/a1fa/d73f/169d194521ea858f50e8b1a121b72786?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ii0ZJmaJfZSFjV5lRNNPlJO1twqsf8ZollvmyZbTFMUWO1biY-5BkjJUJSMLgKL4AJcpEttvtfiz-v7BROqO~ElS4owVZNsMaSfJWM6ILUA-ySuDmclVGRp9wZcrkg-~lYIrt7TsqBMInp12Xs1TVdCnCYvKzo7NtXrJMvcNm-dCdlU9jcbBpRQt5~5qD6FB3Hs~GIBT5Rcxm5VZyW~M5VMxRd9IwZRrJJqFmpOpxXh8ekMjy82bk-Fle2S5xsTiwzophTR7fv2AZ-lESFm47MWzaQAgczC1UM1MPgIdKIewWJQdyDgdX67NtP5gKMBldNMi7jvHN2wnA0YEd4wTDQ__',
+        avatar_image: 'https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D',
         avatar_primary_text :'bai hamar' ,
         avatar_secondary_text :'Driving',
         
@@ -25,11 +26,11 @@ export const cardData = [
         button_text:'2023 Acura MDX'
     },
     { 
-        image: 'https://s3-alpha-sig.figma.com/img/7fdf/dd57/0090702d927088541ef4fb47c7a3b641?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ya~tn7TyuimGn2jcAn1iLYYA9eSK-rJowNvG3u7T0KAihCme0tQNCPJwJUHzPj0nkdhW5b9Ac63k5y6FX5118KxpzQ79PxojNVXpbnsZYKlkJif5DHvwWnodA7HolEp-ic5NDf~OJ45ioyd6GelvWmgaMEffk8LqgZRBtwRZd~4dJIn0i0qyYPAlQaJaDurSHHcsjgx-GtpS4g9McMY4vEIwjdaNQR5YtywokS0x5-7Pu7tWXGpMm8IIOUK0uSEvvt683~4OGkTu7762C79kYtV9A8c4IVtrGV3lPhZ8kQnpC68gT9oON3LqGIkpSIablnTLp4uXhAYR3CK~h~yh~Q__',
+        image: 'https://images.unsplash.com/photo-1517676109075-9a94d44145d1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FyfGVufDB8fDB8fHww',
         primary_text:'',
         secondary_text:'(+234) 090-xxx-xxxx',
 
-        avatar_image: 'https://s3-alpha-sig.figma.com/img/a1fa/d73f/169d194521ea858f50e8b1a121b72786?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ii0ZJmaJfZSFjV5lRNNPlJO1twqsf8ZollvmyZbTFMUWO1biY-5BkjJUJSMLgKL4AJcpEttvtfiz-v7BROqO~ElS4owVZNsMaSfJWM6ILUA-ySuDmclVGRp9wZcrkg-~lYIrt7TsqBMInp12Xs1TVdCnCYvKzo7NtXrJMvcNm-dCdlU9jcbBpRQt5~5qD6FB3Hs~GIBT5Rcxm5VZyW~M5VMxRd9IwZRrJJqFmpOpxXh8ekMjy82bk-Fle2S5xsTiwzophTR7fv2AZ-lESFm47MWzaQAgczC1UM1MPgIdKIewWJQdyDgdX67NtP5gKMBldNMi7jvHN2wnA0YEd4wTDQ__',
+        avatar_image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D',
         avatar_primary_text :'bai hamar' ,
         avatar_secondary_text :'Driving',
         
@@ -37,11 +38,11 @@ export const cardData = [
         button_text:'2023 Acura MDX'
     },
     { 
-        image: 'https://s3-alpha-sig.figma.com/img/7fdf/dd57/0090702d927088541ef4fb47c7a3b641?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ya~tn7TyuimGn2jcAn1iLYYA9eSK-rJowNvG3u7T0KAihCme0tQNCPJwJUHzPj0nkdhW5b9Ac63k5y6FX5118KxpzQ79PxojNVXpbnsZYKlkJif5DHvwWnodA7HolEp-ic5NDf~OJ45ioyd6GelvWmgaMEffk8LqgZRBtwRZd~4dJIn0i0qyYPAlQaJaDurSHHcsjgx-GtpS4g9McMY4vEIwjdaNQR5YtywokS0x5-7Pu7tWXGpMm8IIOUK0uSEvvt683~4OGkTu7762C79kYtV9A8c4IVtrGV3lPhZ8kQnpC68gT9oON3LqGIkpSIablnTLp4uXhAYR3CK~h~yh~Q__',
+        image: 'https://plus.unsplash.com/premium_photo-1664303847960-586318f59035?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2FyfGVufDB8fDB8fHww',
         primary_text:'',
         secondary_text:'(+234) 090-xxx-xxxx',
 
-        avatar_image: 'https://s3-alpha-sig.figma.com/img/a1fa/d73f/169d194521ea858f50e8b1a121b72786?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ii0ZJmaJfZSFjV5lRNNPlJO1twqsf8ZollvmyZbTFMUWO1biY-5BkjJUJSMLgKL4AJcpEttvtfiz-v7BROqO~ElS4owVZNsMaSfJWM6ILUA-ySuDmclVGRp9wZcrkg-~lYIrt7TsqBMInp12Xs1TVdCnCYvKzo7NtXrJMvcNm-dCdlU9jcbBpRQt5~5qD6FB3Hs~GIBT5Rcxm5VZyW~M5VMxRd9IwZRrJJqFmpOpxXh8ekMjy82bk-Fle2S5xsTiwzophTR7fv2AZ-lESFm47MWzaQAgczC1UM1MPgIdKIewWJQdyDgdX67NtP5gKMBldNMi7jvHN2wnA0YEd4wTDQ__',
+        avatar_image: 'https://plus.unsplash.com/premium_photo-1683121366070-5ceb7e007a97?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D',
         avatar_primary_text :'bai hamar' ,
         avatar_secondary_text :'Driving',
         
@@ -49,11 +50,11 @@ export const cardData = [
         button_text:'2023 Acura MDX'
     },
     { 
-        image: 'https://s3-alpha-sig.figma.com/img/7fdf/dd57/0090702d927088541ef4fb47c7a3b641?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ya~tn7TyuimGn2jcAn1iLYYA9eSK-rJowNvG3u7T0KAihCme0tQNCPJwJUHzPj0nkdhW5b9Ac63k5y6FX5118KxpzQ79PxojNVXpbnsZYKlkJif5DHvwWnodA7HolEp-ic5NDf~OJ45ioyd6GelvWmgaMEffk8LqgZRBtwRZd~4dJIn0i0qyYPAlQaJaDurSHHcsjgx-GtpS4g9McMY4vEIwjdaNQR5YtywokS0x5-7Pu7tWXGpMm8IIOUK0uSEvvt683~4OGkTu7762C79kYtV9A8c4IVtrGV3lPhZ8kQnpC68gT9oON3LqGIkpSIablnTLp4uXhAYR3CK~h~yh~Q__',
+        image: 'https://images.unsplash.com/photo-1486326658981-ed68abe5868e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNhcnxlbnwwfHwwfHx8MA%3D%3D',
         primary_text:'',
         secondary_text:'(+234) 090-xxx-xxxx',
 
-        avatar_image: 'https://s3-alpha-sig.figma.com/img/a1fa/d73f/169d194521ea858f50e8b1a121b72786?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ii0ZJmaJfZSFjV5lRNNPlJO1twqsf8ZollvmyZbTFMUWO1biY-5BkjJUJSMLgKL4AJcpEttvtfiz-v7BROqO~ElS4owVZNsMaSfJWM6ILUA-ySuDmclVGRp9wZcrkg-~lYIrt7TsqBMInp12Xs1TVdCnCYvKzo7NtXrJMvcNm-dCdlU9jcbBpRQt5~5qD6FB3Hs~GIBT5Rcxm5VZyW~M5VMxRd9IwZRrJJqFmpOpxXh8ekMjy82bk-Fle2S5xsTiwzophTR7fv2AZ-lESFm47MWzaQAgczC1UM1MPgIdKIewWJQdyDgdX67NtP5gKMBldNMi7jvHN2wnA0YEd4wTDQ__',
+        avatar_image: 'https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D',
         avatar_primary_text :'bai hamar' ,
         avatar_secondary_text :'Driving',
         
@@ -61,11 +62,11 @@ export const cardData = [
         button_text:'2023 Acura MDX'
     },
     { 
-        image: 'https://s3-alpha-sig.figma.com/img/7fdf/dd57/0090702d927088541ef4fb47c7a3b641?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ya~tn7TyuimGn2jcAn1iLYYA9eSK-rJowNvG3u7T0KAihCme0tQNCPJwJUHzPj0nkdhW5b9Ac63k5y6FX5118KxpzQ79PxojNVXpbnsZYKlkJif5DHvwWnodA7HolEp-ic5NDf~OJ45ioyd6GelvWmgaMEffk8LqgZRBtwRZd~4dJIn0i0qyYPAlQaJaDurSHHcsjgx-GtpS4g9McMY4vEIwjdaNQR5YtywokS0x5-7Pu7tWXGpMm8IIOUK0uSEvvt683~4OGkTu7762C79kYtV9A8c4IVtrGV3lPhZ8kQnpC68gT9oON3LqGIkpSIablnTLp4uXhAYR3CK~h~yh~Q__',
+        image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGNhcnxlbnwwfHwwfHx8MA%3D%3D',
         primary_text:'',
         secondary_text:'(+234) 090-xxx-xxxx',
 
-        avatar_image: 'https://s3-alpha-sig.figma.com/img/a1fa/d73f/169d194521ea858f50e8b1a121b72786?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ii0ZJmaJfZSFjV5lRNNPlJO1twqsf8ZollvmyZbTFMUWO1biY-5BkjJUJSMLgKL4AJcpEttvtfiz-v7BROqO~ElS4owVZNsMaSfJWM6ILUA-ySuDmclVGRp9wZcrkg-~lYIrt7TsqBMInp12Xs1TVdCnCYvKzo7NtXrJMvcNm-dCdlU9jcbBpRQt5~5qD6FB3Hs~GIBT5Rcxm5VZyW~M5VMxRd9IwZRrJJqFmpOpxXh8ekMjy82bk-Fle2S5xsTiwzophTR7fv2AZ-lESFm47MWzaQAgczC1UM1MPgIdKIewWJQdyDgdX67NtP5gKMBldNMi7jvHN2wnA0YEd4wTDQ__',
+        avatar_image: 'https://plus.unsplash.com/premium_photo-1664541336896-b3d5f7dec9a3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D',
         avatar_primary_text :'bai hamar' ,
         avatar_secondary_text :'Driving',
         
@@ -73,11 +74,11 @@ export const cardData = [
         button_text:'2023 Acura MDX'
     },
     { 
-        image: 'https://s3-alpha-sig.figma.com/img/7fdf/dd57/0090702d927088541ef4fb47c7a3b641?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ya~tn7TyuimGn2jcAn1iLYYA9eSK-rJowNvG3u7T0KAihCme0tQNCPJwJUHzPj0nkdhW5b9Ac63k5y6FX5118KxpzQ79PxojNVXpbnsZYKlkJif5DHvwWnodA7HolEp-ic5NDf~OJ45ioyd6GelvWmgaMEffk8LqgZRBtwRZd~4dJIn0i0qyYPAlQaJaDurSHHcsjgx-GtpS4g9McMY4vEIwjdaNQR5YtywokS0x5-7Pu7tWXGpMm8IIOUK0uSEvvt683~4OGkTu7762C79kYtV9A8c4IVtrGV3lPhZ8kQnpC68gT9oON3LqGIkpSIablnTLp4uXhAYR3CK~h~yh~Q__',
+        image: 'https://plus.unsplash.com/premium_photo-1664304582040-4f6c69c8380c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGNhcnxlbnwwfHwwfHx8MA%3D%3D',
         primary_text:'',
         secondary_text:'(+234) 090-xxx-xxxx',
 
-        avatar_image: 'https://s3-alpha-sig.figma.com/img/a1fa/d73f/169d194521ea858f50e8b1a121b72786?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ii0ZJmaJfZSFjV5lRNNPlJO1twqsf8ZollvmyZbTFMUWO1biY-5BkjJUJSMLgKL4AJcpEttvtfiz-v7BROqO~ElS4owVZNsMaSfJWM6ILUA-ySuDmclVGRp9wZcrkg-~lYIrt7TsqBMInp12Xs1TVdCnCYvKzo7NtXrJMvcNm-dCdlU9jcbBpRQt5~5qD6FB3Hs~GIBT5Rcxm5VZyW~M5VMxRd9IwZRrJJqFmpOpxXh8ekMjy82bk-Fle2S5xsTiwzophTR7fv2AZ-lESFm47MWzaQAgczC1UM1MPgIdKIewWJQdyDgdX67NtP5gKMBldNMi7jvHN2wnA0YEd4wTDQ__',
+        avatar_image: 'https://images.unsplash.com/photo-1521310192545-4ac7951413f0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHVzZXJ8ZW58MHx8MHx8fDA%3D',
         avatar_primary_text :'bai hamar' ,
         avatar_secondary_text :'Driving',
         

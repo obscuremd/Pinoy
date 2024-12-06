@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@clerk/clerk-react": "^5.18.0",
     "@iconscout/unicons": "^4.0.8",
     "@react-google-maps/api": "^2.20.3",
     "framer-motion": "^11.11.9",
     "iconoir-react": "^7.9.0",
+    "ldrs": "^1.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0"
