@@ -58,7 +58,11 @@ router.get("/:id", async (req, res) => {
   const id = req.params.id;
   try {
     const user = await User.findById(id);
-
+    if (user) {
+      res.status(200).json(user);
+    } else {
+      res.status(401).send("user not found");
+    }
     res.status(200).json(user);
   } catch (error) {
     res.status(500).json(error);
@@ -69,7 +73,11 @@ router.get("/:id", async (req, res) => {
 router.get("/email/:email", async (req, res) => {
   try {
     const user = await User.findOne({ email: req.params.email });
-    res.status(200).json(user);
+    if (user) {
+      res.status(200).json(user);
+    } else {
+      res.status(401).send("user not found");
+    }
   } catch (error) {
     res.status(500).json(error);
   }
