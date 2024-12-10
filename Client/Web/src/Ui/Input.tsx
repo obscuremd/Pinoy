@@ -10,9 +10,10 @@ interface InputProps {
     inside_icon?: React.ReactNode
     InputFunction?: (value: React.ChangeEvent<HTMLInputElement>)=>void
     placeholder?: string
+    type?: "text" | "password" | "email" | "number" | "search" | "tel" | "url" | "date"
 }
 
-const InputUi: React.FC<InputProps> = ({stretch, color='primary', outside_icon=(<Search/>), inside_icon=(<Search/>), InputFunction, placeholder='placeholder'}) => {
+const InputUi: React.FC<InputProps> = ({stretch, color='primary', outside_icon=(<Search/>), inside_icon=(<Search/>), InputFunction, placeholder='placeholder', type = 'input'}) => {
 
     const [active, setActive] = useState(false)
 
@@ -22,6 +23,7 @@ const InputUi: React.FC<InputProps> = ({stretch, color='primary', outside_icon=(
         <div className={`flex items-center gap-2 p-[5px] border-[1px] rounded-[10px] ${stretch ? 'w-full' :'w-fit'} ${active ?(color === 'primary' ? 'border-primary-500' : 'border-grayscale-500'):'border-secondary-500'}`}>
             {inside_icon && <Button color={active ? (color === 'primary' ? 'primary' : 'text') : 'default'} size='sm_icon' rounded='full' outline icon_left={inside_icon}/>}
             <input 
+                type={type}
                 placeholder={placeholder}
                 onFocus={() => setActive(true)}
                 onBlur={() => setActive(false)} 

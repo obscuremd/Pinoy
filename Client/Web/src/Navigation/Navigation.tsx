@@ -5,6 +5,10 @@ import { Button, Drivers, Menu, Order, Overview, UserReviews } from '../Exports/
 import React from 'react';
 import { Xmark } from 'iconoir-react';
 
+interface ContentProps {
+  setMobileMenu: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
 const Navigation = () => {
 
   const [mobileMenu, setMobileMenu] = useState(false)
@@ -34,10 +38,6 @@ const Navigation = () => {
   )
 }
 
-interface ContentProps {
-  setMobileMenu: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
 const Content: React.FC<ContentProps> = ({setMobileMenu}) => {
     const currentPath = useLocation().pathname
     const Path = menuItems.filter(item => item.link === currentPath)
@@ -60,5 +60,7 @@ const Content: React.FC<ContentProps> = ({setMobileMenu}) => {
         </div>
     );
 };
+
+
 
 export default Navigation

@@ -1,6 +1,8 @@
 import mongoose, { models } from "mongoose";
 
 const adminSchema = new mongoose.Schema({
+    companyName: {type:String},
+    admins:{type:[String]},
     drivers: {type:[String]}
 });
 

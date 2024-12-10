@@ -1,12 +1,12 @@
 import { Router } from "express";
-import Trip from "../Models/TripModel";
+import Review from "../Models/ReviewsModel";
 const router = Router()
 
 // start Trip
 router.post('/start',async(req, res)=>{
     const {driver_id, passenger_id, activity, start_location, destination, price, total_time} = req.body
     try {
-        const newTrip = new Trip({driver_id, passenger_id, activity, start_location, destination, price, total_time})
+        const newTrip = new Review({driver_id, passenger_id, activity, start_location, destination, price, total_time})
         await newTrip.save()
         res.status(200).json(newTrip)
     } catch (error) {
@@ -18,7 +18,7 @@ router.post('/start',async(req, res)=>{
 router.put('/:id',async(req, res)=>{
     
     try {
-        const trip = await Trip.findByIdAndUpdate(req.params.id)
+        const trip = await Review.findByIdAndUpdate(req.params.id)
         
         if(!trip){
             res.status(404).json('Trip not found')
@@ -36,7 +36,7 @@ router.put('/:id',async(req, res)=>{
 router.get('/:id',async(req, res)=>{
     
     try {
-        const trip = await Trip.findById(req.params.id)
+        const trip = await Review.findById(req.params.id)
         if(!trip){
             res.status(404).json('trip not found')
         }else{
@@ -51,7 +51,7 @@ router.get('/:id',async(req, res)=>{
 router.get('/driver/:id',async(req, res)=>{
     
     try {
-        const trip = await Trip.findOne({driver_id:req.params.id})
+        const trip = await Review.findOne({driver_id:req.params.id})
         if(!trip){
             res.status(404).json('trip not found')
         }else{
@@ -66,7 +66,7 @@ router.get('/driver/:id',async(req, res)=>{
 router.get('/passenger/:id',async(req, res)=>{
     
     try {
-        const trip = await Trip.findOne({passenger_id:req.params.id})
+        const trip = await Review.findOne({passenger_id:req.params.id})
         if(!trip){
             res.status(404).json('trip not found')
         }else{

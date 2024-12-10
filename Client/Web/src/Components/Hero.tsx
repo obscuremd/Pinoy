@@ -22,16 +22,19 @@ const HeroComponent:React.FC<HeroProps> = ({primary_text, secondary_text, size =
     }
 
   return (
-    <div className='w-full'>
+    <div className='w-full relative'>
+          <div className=''>
             <img 
                 className={`w-full rounded-2xl ${getImageSize(size)}`} 
                 src={image} 
-                style={{
-                  background: 'linear-gradient(180deg, rgba(25, 28, 45, 0.00) 0%, #191C2D 100%)',
-                  objectFit:'cover'
-                }}
+                style={{ objectFit:'cover' }}
                 />
-            <div className='flex flex-col gap-2 mt-[-64px] px-2'>
+                <div 
+                  className={`w-full rounded-2xl ${getImageSize(size)} absolute top-0`}
+                  style={{ background: 'linear-gradient(180deg, rgba(25, 28, 45, 0.00) 0%, #191C2D 100%)', }}
+                  />
+          </div>
+            <div className='flex flex-col gap-2 mt-[-64px] px-2 absolute'>
                 {avatar_image && <Avatar size='lg' primary_text={avatar_primary_text} vertical secondary_text={ avatar_secondary_text} image={avatar_image}/>}
                 {primary_text && <Text fontSize='t2' fontWeight='semibold' text={primary_text}/>}
                 {secondary_text && <Text fontSize='caption' fontWeight='semibold' text={secondary_text}/>}
