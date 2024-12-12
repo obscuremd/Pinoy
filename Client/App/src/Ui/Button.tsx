@@ -1,7 +1,7 @@
 import React from 'react'
-import { Text } from '../Exports/Exports'
 import { TouchableOpacity, View } from 'react-native'
 import { IconoirProvider } from 'iconoir-react-native'
+import TextUi from './Text'
 
 interface ButtonProps{
   stretch?: boolean
@@ -138,7 +138,7 @@ const ButtonUI:React.FC<ButtonProps> = ({size = 'lg', text, outline, color = 'pr
                 ${justify(position)}
                 ${getColor(color)}`}>
             <View className={`${getIconSize(size)} `}>{icon_left}</View>
-            {text && <Text color={getTextColor(color)} text={text} fontSize={getFontSize(size)}/>}
+            {text && <TextUi color={getTextColor(color)} text={text} fontSize={getFontSize(size)}/>}
             <View className={`${getIconSize(size)} `}>{icon_right}</View>
         </TouchableOpacity>
     </View>

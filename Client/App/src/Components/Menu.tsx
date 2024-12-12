@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { Button, Text } from '../Exports/Exports'
 import { Href, usePathname, useRouter } from 'expo-router'
 import { Image, View } from 'react-native'
+import ButtonUI from '../Ui/Button'
+import TextUi from '../Ui/Text'
 
 interface menuItems {
     icon: React.ReactNode, 
@@ -32,7 +33,7 @@ const MenuComponent:React.FC<MenuProps> = ({
         { logo &&
             <View className='p-5 flex-row items-center gap-2'>
                 <Image source={require('../../assets/Logo.png')} className='w-6 h-6'/>
-                {!collapsed && <Text text='Pinoy' fontSize='h5' fontWeight='bold'/>}
+                {!collapsed && <TextUi text='Pinoy' fontSize='h5' fontWeight='bold'/>}
             </View>}
 
         <View className={`
@@ -40,7 +41,7 @@ const MenuComponent:React.FC<MenuProps> = ({
             ${between?'w-full justify-between':'self-start  gap-2'}`}>
             {
                 menuItems.map(({icon, link, name}, index)=>(
-                        <Button key={index} onclick={()=> router.push(link)} icon_left={icon} color={pathname === link ?'primary': 'text'} text={collapsed? undefined:name} size='sm' rounded='medium'  stretch position='start'/>
+                        <ButtonUI key={index} onclick={()=> router.push(link)} icon_left={icon} color={pathname === link ?'primary': 'text'} text={collapsed? undefined:name} size='sm' rounded='medium'  stretch position='start'/>
                 ))
             }
         </View>

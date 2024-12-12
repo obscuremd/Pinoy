@@ -16,6 +16,7 @@ router.get("/", async (req, res) => {
 router.post("/register", async (req, res) => {
   const {
     username,
+    full_name,
     email,
     phone_number,
     admin,
@@ -32,6 +33,7 @@ router.post("/register", async (req, res) => {
   try {
     const newUser = new User({
       username,
+      full_name,
       email,
       phone_number,
       admin,

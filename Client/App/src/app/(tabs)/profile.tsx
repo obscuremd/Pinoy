@@ -1,9 +1,9 @@
-import {StyleSheet, TouchableOpacity, View } from 'react-native'
+import { View } from 'react-native'
 import React, { useState } from 'react'
-import { Avatar, Button, Card, Hero, Input, Menu, Text } from '@/src/Exports/Exports'
-import { CardShield, Check, UserBag } from 'iconoir-react-native'
+import {Button, Hero,} from '@/src/Exports/Exports'
+import { CardShield } from 'iconoir-react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { cardData, menuItems } from '@/src/Exports/Constatants'
+import { cardData } from '@/src/Exports/Constatants'
 import SettingsSection from '@/src/Screens/ProfileScreen/SettingSection'
 import HistorySection from '@/src/Screens/ProfileScreen/HistorySection'
 

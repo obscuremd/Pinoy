@@ -1,7 +1,9 @@
 import React from 'react'
 import { Bookmark } from 'iconoir-react-native'
-import { Avatar, Button, Text } from '../Exports/Exports';
 import { Image, View } from 'react-native';
+import AvatarUi from '../Ui/Avatar';
+import TextUi from '../Ui/Text';
+import ButtonUI from '../Ui/Button';
 
 interface CardProps {
 
@@ -88,14 +90,14 @@ const CardComponent:React.FC<CardProps> = ({
         {image && <Image src={image} alt="" style={{objectFit:'cover'}} className={`${vertical ? 'h-[100px] w-full' :'w-[100px]'} rounded-lg`} />}
         
         <View className='flex flex-col gap-2 w-fit'>
-            {avatar && avatar_image && <Avatar vertical image={avatar_image} primary_text={avatar_primary_text} secondary_text={avatar_secondary_text} size='lg'/>}
-            {primary_text && <Text fontSize='t2' fontWeight='semibold' text={primary_text}/>}
-            {secondary_text && <Text fontSize='caption' fontWeight='semibold' text={secondary_text}/>}
-            {button && <Button color='primary' outline size='xs' text={button_text} icon_left={left_button} icon_right={right_button} rounded='full'/>}
+            {avatar && avatar_image && <AvatarUi vertical image={avatar_image} primary_text={avatar_primary_text} secondary_text={avatar_secondary_text} size='lg'/>}
+            {primary_text && <TextUi  fontSize='t2' fontWeight='semibold' text={primary_text}/>}
+            {secondary_text && <TextUi fontSize='caption' fontWeight='semibold' text={secondary_text}/>}
+            {button && <ButtonUI color='primary' outline size='xs' text={button_text} icon_left={left_button} icon_right={right_button} rounded='full'/>}
         </View>
         
         {bookmark_button && 
-            <Button 
+            <ButtonUI 
                 color={bookmark_button_type} 
                 outline = {bookmark_button_outline}
                 size='xs' 

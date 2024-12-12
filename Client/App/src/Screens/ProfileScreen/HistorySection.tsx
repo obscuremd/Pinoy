@@ -36,7 +36,7 @@ export default function HistorySection (){
                 timelineData.map(({id})=>(
                     <Button 
                         rounded='full' 
-                        text={id} 
+                        text={id.toString()} 
                         color='primary'
                         outline 
                         size='xs'/>
@@ -48,14 +48,14 @@ export default function HistorySection (){
 
             {
                     timelineData.map((item, index)=>(
-                        <View  className="flex-row items-center gap-2">
+                        <View key={index} className="flex-row items-center gap-2">
                             <Text text={item.time}/>
                             <Card 
                                 border 
                                 outline='white' 
                                 between 
                                 stretch
-                                width="w-[10vw]"
+                                // width="w-[10vw]"
                                 primary_text={item.primary_text} 
                                 secondary_text={item.secondary_text}/>
                         </View>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Button } from '../Exports/Exports'
 import { Search } from 'iconoir-react-native'
 import { TextInput, View } from 'react-native';
+import ButtonUI from './Button';
 
 interface InputProps {
     stretch?: boolean
@@ -29,7 +29,7 @@ const InputUi: React.FC<InputProps> = ({
         <View className={
             `flex flex-row items-center gap-2 p-[5px] border-[1px] rounded-[10px] 
             ${active ?(color === 'primary' ? 'border-primary-500' : 'border-grayscale-500'):'border-grayscale-700'}`}>
-            {inside_icon && <Button color={active ? (color === 'primary' ? 'primary' : 'text') : 'text'} size='sm_icon' rounded='full' outline icon_left={inside_icon}/>}
+            {inside_icon && <ButtonUI color={active ? (color === 'primary' ? 'primary' : 'text') : 'text'} size='sm_icon' rounded='full' outline icon_left={inside_icon}/>}
             <TextInput 
                 placeholder={placeholder}
                 onFocus={() => setActive(true)}
@@ -40,7 +40,7 @@ const InputUi: React.FC<InputProps> = ({
                   ${stretch && 'w-[80%]'}
                   ${active ? 'text-grayscale-500' : 'text-grayscale-700'}`}/>
         </View>
-        {outside_icon && <Button color={active ? (color === 'primary' ? 'primary' : 'text') : 'text'} size='sm_icon' rounded='full' outline icon_left={outside_icon}/>}
+        {outside_icon && <ButtonUI color={active ? (color === 'primary' ? 'primary' : 'text') : 'text'} size='sm_icon' rounded='full' outline icon_left={outside_icon}/>}
     </View>
   )
 }

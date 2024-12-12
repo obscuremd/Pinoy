@@ -1,7 +1,7 @@
 import { ScrollView, View } from 'react-native'
 import React from 'react'
-import {Avatar, Button, Card, Hero, Input, Menu, Navbar, Text } from '@/src/Exports/Exports'
-import { MapPin, NavArrowDown, UserBag } from 'iconoir-react-native'
+import {Avatar, Button, Card, Hero, Input, Text } from '@/src/Exports/Exports'
+import { MapPin, NavArrowDown } from 'iconoir-react-native'
 import { cardData, hero } from '@/src/Exports/Constatants'
 
 export default function HomeScreen () {
@@ -27,7 +27,7 @@ export default function HomeScreen () {
         <Text text='Drivers' fontSize='body' fontWeight='semibold'/>
         <ScrollView horizontal contentContainerStyle={{gap:24}} >
           {cardData.map(({avatar_image, avatar_primary_text}, index)=>(
-              <Avatar image={avatar_image} size='lg' secondary_text={avatar_primary_text}/>
+              <Avatar key={index} image={avatar_image} size='lg' secondary_text={avatar_primary_text}/>
             ))}
         </ScrollView>
       </View>
@@ -36,7 +36,7 @@ export default function HomeScreen () {
         <Text text='Recents' fontSize='body' fontWeight='semibold'/>
         <ScrollView contentContainerStyle={{gap:8}}>
           {cardData.map((item, index)=>(
-            <Card image={item.image} stretch border outline='primary' primary_text={item.primary_text} secondary_text={item.secondary_text} button_text={item.button_text} button  />
+            <Card key={index} image={item.image} stretch border outline='primary' primary_text={item.primary_text} secondary_text={item.secondary_text} button_text={item.button_text} button  />
           ))}
         </ScrollView>
       </View>

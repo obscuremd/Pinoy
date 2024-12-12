@@ -1,7 +1,9 @@
 import React from 'react'
-import { Avatar, Button, Text } from '../Exports/Exports'
 import { Image, StyleSheet, View } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient';
+import AvatarUi from '../Ui/Avatar';
+import TextUi from '../Ui/Text';
+import ButtonUI from '../Ui/Button';
 
 interface HeroProps {
     primary_text?: string
@@ -55,10 +57,10 @@ const HeroComponent:React.FC<HeroProps> = ({primary_text, secondary_text, size =
                         />
             </View>
             <View className='flex flex-col gap-2 mt-[-64px] px-2 z-50'>
-                {avatar_image && <Avatar size='lg' primary_text={avatar_primary_text} vertical secondary_text={ avatar_secondary_text} image={avatar_image}/>}
-                {primary_text && <Text fontSize='t2' fontWeight='semibold' text={primary_text}/>}
-                {secondary_text && <Text fontSize='caption' fontWeight='semibold' text={secondary_text}/>}
-                <Button text={button_text} outline={button_outline} color='primary' size='sm' rounded='full'/>
+                {avatar_image && <AvatarUi size='lg' primary_text={avatar_primary_text} vertical secondary_text={ avatar_secondary_text} image={avatar_image}/>}
+                {primary_text && <TextUi fontSize='t2' fontWeight='semibold' text={primary_text}/>}
+                {secondary_text && <TextUi fontSize='caption' fontWeight='semibold' text={secondary_text}/>}
+                <ButtonUI text={button_text} outline={button_outline} color='primary' size='sm' rounded='full'/>
             </View>
     </View>
   )

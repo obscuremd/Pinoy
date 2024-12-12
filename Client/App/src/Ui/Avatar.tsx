@@ -1,6 +1,6 @@
 import React from 'react'
-import { Text } from '../Exports/Exports';
 import { Image, View } from 'react-native';
+import TextUi from './Text';
 
 interface AvatarProps{
   image: string;
@@ -28,8 +28,8 @@ const AvatarUi:React.FC<AvatarProps> = ({image, size = 'lg', primary_text, secon
         style={{objectFit:'cover'}}
         className={`${getImageSize(size)} rounded-full border-[4px] ${active ? 'border-primary-500' : 'border-transparent'}`}/>
       <View className={`flex flex-col ${vertical ? 'items-start' : 'items-center'}`}>
-        {primary_text && <Text fontSize='t2' fontWeight='semibold' text={primary_text}/>}
-        {secondary_text && <Text fontSize='caption' fontWeight='semibold' text={secondary_text}/>}
+        {primary_text && <TextUi fontSize='t2' fontWeight='semibold' text={primary_text}/>}
+        {secondary_text && <TextUi fontSize='caption' fontWeight='semibold' text={secondary_text}/>}
       </View>
     </View>
   )
