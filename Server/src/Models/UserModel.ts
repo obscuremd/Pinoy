@@ -19,8 +19,14 @@ const userSchema = new mongoose.Schema({
     default: "unregistered",
   },
   trips: { type: [String], default: [] },
-  location: { type: [Number, Number], default: [] },
+  location: {
+    type: { type: String, enum: ["Point"], required: true },
+    coordinates: { type: [Number], required: true }, // [longitude, latitude]
+  },
 });
+
+// Add the 2dsphere index
+userSchema.index({ location: "2dsphere" });
 
 const User = models.UserData || mongoose.model("UserData", userSchema);
 export default User;

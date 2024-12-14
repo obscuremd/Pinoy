@@ -12,6 +12,41 @@ router.get("/", async (req, res) => {
   }
 });
 
+// get nearby drivers
+router.get("/nearby/:location", async (req, res) => {
+  try {
+    const locationParam = req.params.location.split(","); // Split the coordinates
+    const longitude = parseFloat(locationParam[0]);
+    const latitude = parseFloat(locationParam[1]);
+
+    // Validate input
+    // if (!longitude || !latitude) {
+    //   return res.status(400).json({ message: "Invalid location format" });
+    // }
+
+    // Query nearby drivers within 5km
+    const drivers = await User.aggregate([
+      {
+        $geoNear: {
+          near: {
+            type: "Point",
+            coordinates: [longitude, latitude], // [Longitude, Latitude]
+          },
+          distanceField: "distance",
+          maxDistance: 5000, // 5 kilometers
+          spherical: true,
+          query: { driver: true }, // Filter to ensure only drivers are returned
+        },
+      },
+    ]);
+
+    res.status(200).json(drivers);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error", error: error });
+  }
+});
+
 // create user
 router.post("/register", async (req, res) => {
   const {
