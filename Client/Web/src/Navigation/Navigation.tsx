@@ -1,9 +1,10 @@
 import { Suspense, useEffect, useState } from 'react'
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { isMobile, menuItems } from '../Exports/Constatants'
-import { Button, Drivers, Menu, Order, Overview, UserReviews } from '../Exports/Exports'
+import { Button, Drivers, Menu, Order, Overview, Text, UserReviews } from '../Exports/Exports'
 import React from 'react';
 import { Xmark } from 'iconoir-react';
+import { useDBUser } from '../Providers/UserProvider';
 
 interface ContentProps {
   setMobileMenu: React.Dispatch<React.SetStateAction<boolean>>;
@@ -12,6 +13,9 @@ interface ContentProps {
 const Navigation = () => {
 
   const [mobileMenu, setMobileMenu] = useState(false)
+
+  const {userData} = useDBUser()
+  console.log(userData)
 
   return (
     <Suspense fallback={ 
@@ -22,7 +26,12 @@ const Navigation = () => {
         
         <div className='w-full flex gap-8 relative'>
           <BrowserRouter>
-                {!isMobile && <Menu menuItems={menuItems}/>}
+                {!isMobile && 
+                  <div className='flex flex-col gap-10'>
+                    <Menu menuItems={menuItems}/>
+                    <Text text={`Company Name: `} />
+                  </div>
+                }
                 {isMobile && mobileMenu && 
                   <div className='absolute w-full h-screen flex flex-col gap-4 py-3 bg-background-500'>
                     <Button icon_left={<Xmark/>} onclick={()=>setMobileMenu(false)} rounded='full' outline color='primary' size='sm_icon'/>

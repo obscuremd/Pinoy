@@ -86,4 +86,18 @@ router.get("/passenger/:id", async (req, res) => {
   }
 });
 
+// get all trips by passengerId
+router.get("/passenger/:id/all", async (req, res) => {
+  try {
+    const trips = await Trip.find({ passenger_id: req.params.id });
+    if (!trips.length) {
+      res.status(404).json("No trips found for this passenger");
+    } else {
+      res.status(200).json(trips);
+    }
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
 export default router;
