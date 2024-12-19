@@ -4,6 +4,9 @@ const tripSchema = new mongoose.Schema(
   {
     driver_id: { type: String },
     passenger_id: { type: String },
+    receiver_email: { type: String },
+    receiver_phone_number: { type: String },
+    object_description: { type: String },
     activity: { type: Boolean, default: false },
     start_location: {
       type: {

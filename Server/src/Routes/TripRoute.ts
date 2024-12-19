@@ -7,6 +7,9 @@ router.post("/start", async (req, res) => {
   const {
     driver_id,
     passenger_id,
+    receiver_email,
+    receiver_phone_number,
+    object_description,
     activity,
     start_location,
     destination,
@@ -17,6 +20,9 @@ router.post("/start", async (req, res) => {
     const newTrip = new Trip({
       driver_id,
       passenger_id,
+      receiver_email,
+      receiver_phone_number,
+      object_description,
       activity,
       start_location,
       destination,
