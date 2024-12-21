@@ -69,29 +69,48 @@ router.get("/:id", async (req, res) => {
   }
 });
 // get Trip driverId
-router.get("/driver/:id", async (req, res) => {
-  try {
-    const trip = await Trip.findOne({ driver_id: req.params.id });
-    if (!trip) {
-      res.status(404).json("trip not found");
-    } else {
-      res.status(200).json(trip);
-    }
-  } catch (error) {
-    res.status(500).json(error);
-  }
-});
+// router.get("/driver/:id", async (req, res) => {
+//   try {
+//     const trip = await Trip.findOne({ driver_id: req.params.id });
+//     if (!trip) {
+//       res.status(404).json("trip not found");
+//     } else {
+//       res.status(200).json(trip);
+//     }
+//   } catch (error) {
+//     res.status(500).json(error);
+//   }
+// });
 // get Trip passengerId
-router.get("/passenger/:id", async (req, res) => {
+// router.get("/passenger/:id", async (req, res) => {
+//   try {
+//     const trip = await Trip.findOne({ passenger_id: req.params.id });
+//     if (!trip) {
+//       res.status(404).json("trip not found");
+//     } else {
+//       res.status(200).json(trip);
+//     }
+//   } catch (error) {
+//     res.status(500).json(error);
+//   }
+// });
+
+// active ride
+router.get("/active/:id", async (req, res) => {
   try {
-    const trip = await Trip.findOne({ passenger_id: req.params.id });
+    const trip = await Trip.findOne({
+      $or: [{ driver_id: req.params.id }, { passenger_id: req.params.id }],
+      activity: true,
+    });
+
     if (!trip) {
-      res.status(404).json("trip not found");
+      res.status(404).json({ message: "No active trip found for this ID" });
     } else {
       res.status(200).json(trip);
     }
   } catch (error) {
-    res.status(500).json(error);
+    console.error("Error fetching active trip:", error);
+    res.status(500).json({ message: "Internal server error" });
   }
 });
 
