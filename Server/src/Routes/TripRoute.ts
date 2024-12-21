@@ -41,13 +41,14 @@ router.post("/start", async (req, res) => {
 // update Trip
 router.put("/:id", async (req, res) => {
   try {
-    const trip = await Trip.findByIdAndUpdate(req.params.id);
+    const trip = await Trip.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
 
     if (!trip) {
       res.status(404).json("Trip not found");
     } else {
-      const newTrip = await trip.updateOne({ $set: req.body });
-      res.status(200).json(newTrip);
+      res.status(200).json(trip);
     }
   } catch (error) {
     res.status(500).json(error);
