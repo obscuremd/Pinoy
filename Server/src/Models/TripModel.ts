@@ -9,6 +9,7 @@ const tripSchema = new mongoose.Schema(
     receiver_phone_number: { type: String },
     object_description: { type: String },
     activity: { type: Boolean, default: false },
+    pickup: { type: Boolean, default: false },
     start_location: {
       type: {
         type: String,
