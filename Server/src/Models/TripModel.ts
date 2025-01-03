@@ -2,7 +2,7 @@ import mongoose, { models } from "mongoose";
 
 const tripSchema = new mongoose.Schema(
   {
-    driver_id: { type: String, required: true },
+    driver_id: { type: String },
     customers: {
       type: [String],
       default: [],
