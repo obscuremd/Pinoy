@@ -2,14 +2,36 @@ import mongoose, { models } from "mongoose";
 
 const tripSchema = new mongoose.Schema(
   {
-    driver_id: { type: String },
-    passenger_id: { type: String },
+    driver_id: { type: String, required: true },
+    customers: {
+      type: [String],
+      default: [],
+      validate: {
+        validator: function (value: []) {
+          return value.length > 0; // Ensures at least one customer exists
+        },
+        message: "The customers array must contain at least one user.",
+      },
+    },
     images: { type: [String] },
     receiver_email: { type: String },
     receiver_phone_number: { type: String },
     object_description: { type: String },
     activity: { type: Boolean, default: false },
     pickup: { type: Boolean, default: false },
+    driver_location: {
+      type: {
+        type: String,
+        enum: ["Point"],
+        required: true,
+        default: "Point",
+      },
+      coordinates: {
+        type: [Number],
+        required: true,
+        default: [0, 0],
+      },
+    },
     start_location: {
       type: {
         type: String,
