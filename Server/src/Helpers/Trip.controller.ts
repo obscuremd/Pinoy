@@ -5,7 +5,9 @@ export const start = async (req: Request, res: Response) => {
   try {
     const newTrip = new Trip(req.body);
     await newTrip.save();
-    res.status(200).json({ success: true, message: "trip started", newTrip });
+    res
+      .status(200)
+      .json({ success: true, message: "trip started", data: newTrip });
   } catch (error) {
     res.status(500).json({ success: false, message: "error", error });
   }
@@ -20,7 +22,9 @@ export const update = async (req: Request, res: Response) => {
     if (!trip) {
       res.status(404).json({ success: false, message: "Trip not found" });
     } else {
-      res.status(200).json({ success: true, message: "trip updated", trip });
+      res
+        .status(200)
+        .json({ success: true, message: "trip updated", data: trip });
     }
   } catch (error) {
     res.status(500).json({ success: false, message: "error", error });
@@ -33,7 +37,9 @@ export const getRide = async (req: Request, res: Response) => {
     if (!trip) {
       res.status(404).json("trip not found");
     } else {
-      res.status(200).json({ success: true, message: "trip found", trip });
+      res
+        .status(200)
+        .json({ success: true, message: "trip found", data: trip });
     }
   } catch (error) {
     res.status(500).json(error);
@@ -54,7 +60,11 @@ export const getActiveRide = async (req: Request, res: Response) => {
     } else {
       res
         .status(200)
-        .json({ success: true, message: "there is an active trip", trip });
+        .json({
+          success: true,
+          message: "there is an active trip",
+          data: trip,
+        });
     }
   } catch (error) {
     console.error("Error fetching active trip:", error);
@@ -76,7 +86,9 @@ export const getAllTrips = async (req: Request, res: Response) => {
         .status(404)
         .json({ success: false, message: "No trips found for this passenger" });
     } else {
-      res.status(200).json({ success: true, message: "trip found", trips });
+      res
+        .status(200)
+        .json({ success: true, message: "trip found", data: trips });
     }
   } catch (error) {
     res.status(500).json(error);
